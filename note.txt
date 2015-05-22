@@ -1,0 +1,7 @@
+file  : JsonPostRepositoryTest.php
+method: it_should_add_post_to_repository()
+line  : 56 ( $this->assertEquals(9, $newRepo->all()->count()); )
+note  : There is no action for adding a new element in the $newRepo repository,
+        so the assertEquals function should be called with value of "8",
+        because there are 8 post objects in the input json file and
+        the $newRepo just gets all the input json records wich count is "8".

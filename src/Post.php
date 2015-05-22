@@ -24,12 +24,12 @@ class Post implements JsonSerializable
 
     /**
      * @var string
-     **/    
+     **/
     protected $title;
 
     /**
      * @var string
-     **/    
+     **/
     protected $slug;
 
     /**
@@ -60,5 +60,19 @@ class Post implements JsonSerializable
     public function __get($name)
     {
         return $this->$name;
+    }
+
+    /**
+     * @return array
+     */
+    function jsonSerialize()
+    {
+        return array(
+            'id' => $this->id,
+            'date' => $this->date,
+            'authorId' => $this->authorId,
+            'title' => $this->title,
+            'slug' => $this->slug
+        );
     }
 }
